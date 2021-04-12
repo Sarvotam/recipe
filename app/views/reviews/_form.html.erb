@@ -1,0 +1,4 @@
+<%= form_for([@recipe, @recipe.reviews.build], remote: true)  do |f| %>
+	<%= f.text_area :comment %>
+	<%= f.button :submit, :class => "btn-custom2" %>
+<% end %>

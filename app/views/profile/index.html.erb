@@ -1,0 +1,20 @@
+
+<br>
+<div class="container">
+<h2><%= current_user.email%></h2>
+  <div class="row">
+  <% @profiles.each do |recipe| %>
+    <div class="col-md-3 col-sm-3">
+      <div class="thumbnail">
+          <%= link_to image_tag(recipe.image, id: 'recipe_image'), recipe %>
+            <strong><b><%= recipe.title %></b></strong>
+              <% if recipe.user_id == current_user.id %>
+                <td><%= link_to 'Edit', edit_recipe_path(recipe) %></td>
+                <td><%= link_to 'Destroy', recipe, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+              <%end%>
+      </div>
+    </div>
+  <% end %>
+  </div>
+	
+</div>

@@ -1,0 +1,28 @@
+// Place all the styles related to the Reviews controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+* {
+  box-sizing: border-box;
+}
+.recipe_title{
+  text-align: center;
+  font-size: 15px;
+    font-weight: bold;
+}
+#recipe_img {
+  height: 220px;
+  width: 100%;
+}
+.column {
+  float: left;
+  width: 20%;
+  padding: 5px;
+}
+
+/* Clearfix (clear floats) */
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}

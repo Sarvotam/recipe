@@ -1,0 +1,7 @@
+<%= form.nested_fields_for :ingredients do |ingredient| %>
+   <%= 5.times do %>
+    <%= ingredient.text_field :content %>
+     <%= ingredient.remove_nested_fields_link %>
+   <% end %>
+<% end %>
+<%= form.add_nested_fields_link :ingredients %>

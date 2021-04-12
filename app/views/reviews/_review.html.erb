@@ -1,0 +1,11 @@
+<div class="review-<%= review.id%>">
+	<div class="review-rating" data-score="<%= review.rating %>"></div>
+	<p class="review-comment">
+	<%= review.comment %></p>
+	<% if user_signed_in? %>
+		<% if review.user_id == current_user.id %>
+				<%= link_to "Edit", edit_recipe_review_path(review.recipe, review) %>&nbsp ||
+				<%= link_to "Delete", recipe_review_path(review.recipe, review),remote: true, method: :delete, data: { confirm: "Are you sure?" }%>		
+		<% end %>	
+	<% end %>
+</div>

@@ -1,0 +1,12 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: sals rece
+  description: MyText
+  category: salad
+
+two:
+  title: MyString
+  description: MyText
+  category: salad
+

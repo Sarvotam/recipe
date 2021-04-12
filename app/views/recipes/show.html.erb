@@ -1,0 +1,63 @@
+<p id="notice"><%= notice %></p>
+<div class="container">
+<div class=" row">
+	<div class="col-md-4">
+		<%= image_tag(@recipe.image, class: "rec_img")%>
+		<button class="btn btn-primary center ">
+			<%= link_to "Add Review", new_recipe_review_path(@recipe), :class => "review_btn" %>
+		</button>
+	</div>
+	<div class="col-md-8">
+		<div class="book-info" style="height: 475px;">
+			<h2>Category: <%= @recipe.category.name %></h2>
+			<h3 class="book-title"><%= @recipe.title %></h3>
+			<p class="book-desc"><%= @recipe.description %></p>
+			<div class="col-md-4">	
+			<strong>ingredient:</strong>
+				<ol>
+				<% for @ingredient in @recipe.ingredients %>
+					<li><%= @ingredient.name %></li>
+				<%end%>
+				</ol>
+			</div>
+			<div class="col-md-4">
+			<strong>steps:</strong>
+				<ol>
+				<% for @step in @recipe.steps %>
+					<li><%= @step.direction %></li>
+				<%end%>
+				</ol>
+			</div>
+		</div>
+	</div>
+<div class="row">
+	<div class="col-md-12">
+		<div class="reviews">
+			<!-- Where the reviews/ratings will go -->
+			<h2>Reviews</h2>
+			<div class="all-reviews">
+				<%= render @recipe.reviews %>
+			</div>
+			<% if user_signed_in? %>
+			<%= render  'reviews/form'%>
+			<%end%>
+		</div>	
+	</div>
+</div>
+</div>
+</div>
+
+<style type="text/css">
+	button .center {
+		vertical-align: center;
+	}
+	.review_btn {
+		color: #fbfbfb;
+	}
+	.rec_img {
+		height: 400px;
+		width: 300px;
+	}
+</style>
+
+
